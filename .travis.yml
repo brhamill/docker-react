@@ -9,13 +9,12 @@ script:
   - docker run -e CI=true brhamill/docker-react npm run test
 
 deploy:
-  edge: true
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker-react"
-  env: "DockerReact-env"
+  app: "react-first-app"
+  env: "ReactFirstApp-env"
   bucket_name: "elasticbeanstalk-us-east-2-890187507100"
-  bucket_path: "docker-react"
+  bucket_path: "react-first-app"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
